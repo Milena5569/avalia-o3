@@ -1,0 +1,137 @@
+/* RESET BÁSICO */
+* { /* Todos os elementos da pagina */
+  margin: 0;   /*Zera margens e espaamentos */
+  padding: 0; 
+  box-sizing: border-box; /* Ajuda  a controlar melhor o tamanho dos elementos */
+  font-family: 'Poppins', sans-serif; /* Fonte padrão */
+}
+
+body {
+  background-color: #807546;
+  color: #000000;
+  line-height: 1.6; /* altura */
+}
+
+/* TOPO - HEADER */
+header {
+  background-color: #1a1a1a;
+  padding: 20px; /* Espaço interno */
+  color: rgb(211, 187, 55);
+  display: flex;
+  justify-content: space-between; /* Separa logo de um lado, menu do outro */
+  align-items: center; 
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 28px;
+  letter-spacing: 1px; /* Tamanho e espaçamento entre letras do título. */
+}
+
+header nav ul {
+  list-style: none; /* Tira os pontinhos */
+  display: flex; /* Coloca os itens lado a lado  */
+  gap: 20px;  /* Espaço entre os links */
+}
+
+header nav ul li a {
+  color: #be720d;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ff4040;  /* Quando passa por cima fica nessa cor */
+}
+
+/* MAIN */
+main {
+  padding: 40px 5%;  /* Espaçamento */
+}
+
+main h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff4040;
+  display: inline-block; /* deixa ele comportado como uma caixinha visível e controlável. */
+}
+
+/* CARROS - CARD*/
+section {
+  display: grid; /* 300px - colunas */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /*Espaço */
+}
+
+article {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease; /*Ao passar por cima ele aumenta levemente */
+}
+
+article:hover {
+  transform: scale(1.02);
+}
+
+article img { /* Arruma as imagens para msm largura e etc, mantem proporção. */
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+article p { /*Caso tenha quebra de linha no html */
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+/* RODAPÉ */
+footer.rodape {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+footer .coluna h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ff4040;
+}
+
+footer .coluna p,
+footer .coluna a {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  text-decoration: none;
+}
+
+footer .coluna a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) { /* A partir de 768px */
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  footer.rodape {
+    flex-direction: column;
+  }
+}
